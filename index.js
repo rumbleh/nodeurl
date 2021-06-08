@@ -3,4 +3,4 @@ const app = express()
 
 app.get('/', (req, res) => res.send('hello world!'))
 
-app.listen(3000, () => console.log('Servidor escutando na porta 3000'))
+app.listen(3000, () => console.log('Servidor escutando na porta 3000')) 
