@@ -4,7 +4,10 @@
   "description": "API encurtadora de URLs",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "nano-id": "^1.1.0"
   },
   "devDependencies": {},
   "scripts": {
