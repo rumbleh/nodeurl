@@ -1,0 +1,107 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/link": {
+      "post": {
+        "tags": [],
+        "description": "Endpoint para encurtar uma URL longa.",
+        "parameters": [
+          {
+            "name": "longurl",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "longurl": {
+                  "example": "any"
+                }
+              }
+            },
+            "required": true,
+            "example": "http://www.example.com",
+            "description": "URL longa que deseja-se encurtar.",
+            "type": "object"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/links/{id}": {
+      "get": {
+        "tags": [],
+        "description": "Endpoint para recuperar uma URL encurtada a partir de um ID numérico.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "example": "1",
+            "description": "ID numérico que aponta para uma entrada no banco de dados."
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/search/created_at": {
+      "get": {
+        "tags": [],
+        "description": "Endpoint para pesquisar URLs criadas em uma data específica.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "query",
+            "type": "date",
+            "required": true,
+            "pattern": {},
+            "example": "2021-06-10",
+            "description": "Data que será realizada a busca. Formato YYYY-MM-DD."
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/{shorturl}": {
+      "get": {
+        "tags": [],
+        "description": "Endpoint para recuperar a url grande a partir de uma url curta.",
+        "parameters": [
+          {
+            "name": "shorturl",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "URL curta que será pesquisada."
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}
