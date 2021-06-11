@@ -1,8 +1,11 @@
+/**
+ * @module routes
+ */
 module.exports = function(app) {
   'use strict';
 
-  const encurtador = require('./Controllers/EncurtadorController');
-
+  const encurtador = require('../Controllers/EncurtadorController');
+   
    app.post('/link', async function (req, res)  {      
            
     // #swagger.description = 'Endpoint para encurtar uma URL longa.'

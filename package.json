@@ -2,10 +2,11 @@
   "name": "encurtador",
   "version": "1.0.0",
   "description": "API encurtadora de URLs",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jsdoc": "^3.6.7",
     "mongodb": "^3.6.9",
     "mysql2": "^2.2.5",
     "nano-id": "^1.1.0",
@@ -15,7 +16,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "swagger-autogen": "node swagger.js"
+    "swagger-autogen": "node swagger.js",
+    "generate:doc": "jsdoc -r src"
   },
   "repository": {
     "type": "git",
