@@ -1,5 +1,5 @@
 /**
- * Controller do encurtador que realiza as chamadas do banco para salvar os dados.
+ * @module EncurtadorController
  */
 
 require('dotenv/config');
@@ -35,7 +35,7 @@ function encurtar(url){
 
 /**
  * Funcao que recupera o registro a partir de uma ShortUrl
- * @param {string} shorturl 
+ * @param {string} shorturl URL curta para ser localizado
  * @returns objeto com o registro
  */
 function getByShortURL(shorturl) {
@@ -45,14 +45,17 @@ function getByShortURL(shorturl) {
 
 /**
  * Funcao que recupera todos os registros a partir de uma data
- * @param {string} data 
+ * @param {string} data Data no formato YYYY-MM-DD em que os registros foram criados
  * @returns objeto com todos os registros
  */
  function buscaPorData(data) {
   return db.findByData('links', data)
 }
 
-
+/**
+ * Incrementa a quantidade de acessos de uma URL curta
+ * @param {integer} _id Id para acessar o registro
+ */
 function incrementaHit(_id) {
   db.incrementaHit('links', _id)
 }
