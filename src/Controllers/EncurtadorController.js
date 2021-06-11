@@ -35,7 +35,7 @@ function encurtar(url){
 
 /**
  * Funcao que recupera o registro a partir de uma ShortUrl
- * @param {string} shorturl 
+ * @param {string} shorturl URL curta para ser localizado
  * @returns objeto com o registro
  */
 function getByShortURL(shorturl) {
@@ -54,7 +54,7 @@ function getByShortURL(shorturl) {
 
 /**
  * Incrementa a quantidade de acessos de uma URL curta
- * @param {integer} _id 
+ * @param {integer} _id Id para acessar o registro
  */
 function incrementaHit(_id) {
   db.incrementaHit('links', _id)
